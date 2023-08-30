@@ -33,7 +33,7 @@ export default function CreateNote({ navigation }) {
         onChangeText={setTitle}
       />
       <TextInput
-        style={styles.input}
+        style={[styles.input, styles.contentInput]}
         placeholder="Conteúdo"
         multiline
         value={content}
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderRadius: 5,
   },
+  contentInput: {
+    height: '100%', 
+  },
 });
-
-

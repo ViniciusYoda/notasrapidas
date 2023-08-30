@@ -46,25 +46,26 @@ useEffect(() => {
     }
   };
 
-  const renderItem = ({ item }) => (
-    <View style={styles.noteItem}>
-      <TouchableOpacity
-        style={styles.noteContent}
-        onPress={() => navigation.navigate('ViewNote', { title: item.title, content: item.content })}
-      >
-        <Text style={styles.noteTitle}>{item.title}</Text>
-        <Text style={styles.notePreview}>{item.content.substring(0, 50)}</Text>
+const renderItem = ({ item }) => (
+  <View style={styles.noteItem}>
+    <TouchableOpacity
+      style={styles.noteContent}
+      onPress={() => navigation.navigate('ViewNote', { title: item.title, content: item.content })}
+    >
+      <Text style={styles.noteTitle}>{item.title}</Text>
+      <Text style={styles.notePreview}>{item.content.substring(0, 20)}...</Text>
+    </TouchableOpacity>
+    <View style={styles.actionsContainer}>
+      <TouchableOpacity onPress={() => handleEditNote(item)}>
+        <Feather name="edit-2" size={20} color="#007bff" />
       </TouchableOpacity>
-      <View style={styles.actionsContainer}>
-        <TouchableOpacity onPress={() => handleEditNote(item)}>
-          <Feather name="edit-2" size={20} color="#007bff" />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleDeleteNote(item)}>
-          <Feather name="trash" size={20} color="#ff4d4d" />
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity onPress={() => handleDeleteNote(item)}>
+        <Feather name="trash" size={20} color="#ff4d4d" />
+      </TouchableOpacity>
     </View>
-  );
+  </View>
+);
+
 
   return (
     <View style={styles.container}>
@@ -77,7 +78,7 @@ useEffect(() => {
         style={styles.addButton}
         onPress={() => navigation.navigate('CreateNote')}
       >
-        <Text style={styles.addButtonText}>Criar Nota</Text>
+        <Feather name="plus-circle" size={30} color="#007bff" />
       </TouchableOpacity>
     </View>
   );
@@ -112,6 +113,7 @@ const styles = StyleSheet.create({
   },
   actionsContainer: {
     flexDirection: 'row', 
+
   },
 });
 
