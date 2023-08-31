@@ -38,7 +38,7 @@ export default function EditNote({ route, navigation }) {
         placeholder="Título da Nota"
       />
       <TextInput
-        style={styles.input}
+        style={[styles.input, styles.contentInput]}
         value={editedContent}
         onChangeText={setEditedContent}
         placeholder="Conteúdo da Nota"
@@ -60,6 +60,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 5,
+  },
+  contentInput: {
+    height: '100%', 
   },
 });
 
