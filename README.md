@@ -1,4 +1,4 @@
-# Aplicativo de Notas Rápidas
+# Aplicativo de Notas Rápidas:
 
 Este é um aplicativo de notas rápidas simples desenvolvido usando React Native. Ele permite aos usuários criar, visualizar, editar e excluir notas. As notas são salvas localmente no dispositivo usando a biblioteca Async Storage, garantindo que os usuários não percam suas anotações, mesmo após fechar o aplicativo.
 
